@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Juego de Piedra, Papel o Tijeras en React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un juego de "Piedra, Papel o Tijeras" implementado en React, que te permite competir contra la computadora en una serie de rondas. A continuación, se detalla la estructura y funcionamiento de la aplicación.
 
-## Available Scripts
+## Contenido
 
-In the project directory, you can run:
+1. [Tecnologías Utilizadas](#tecnologías-utilizadas)
+2. [Estructura de Directorios](#estructura-de-directorios)
+3. [Componentes](#componentes)
+4. [Funciones Principales](#funciones-principales)
+5. [Manejo de Errores](#manejo-de-errores)
+6. [Soluciones Implementadas](#soluciones-implementadas)
+7. [Instrucciones para la Ejecución Local](#instrucciones-para-la-ejecución-local)
+8. [Capturas de Pantalla](#capturas-de-pantalla)
+9. [Licencia](#licencia)
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La aplicación está construida utilizando las siguientes tecnologías:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Se utiliza como el marco de desarrollo frontend para crear componentes reutilizables y gestionar el estado de la aplicación.
 
-### `npm test`
+- **styled-components**: Una biblioteca de estilos CSS en línea para aplicar estilos a los componentes de React de manera sencilla y efectiva.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **JavaScript**: El lenguaje de programación principal para la lógica de la aplicación.
 
-### `npm run build`
+## Estructura de Directorios
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La estructura de directorios del proyecto es la siguiente:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+piedra-papel-tijeras-react/
+│
+├── src/
+│ ├── App.js
+│ ├── GameArea.js
+│ ├── Results.js
+│ ├── ...
+│
+├── public/
+│ ├── index.html
+│ ├── ...
+│
+├── package.json
+├── ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- `src/`: Contiene los archivos fuente de la aplicación React, incluyendo los componentes y el archivo principal `App.js`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `public/`: Contiene archivos estáticos, como el archivo HTML de inicio.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Componentes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+La aplicación se divide en tres componentes principales:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **App.js**: Este componente principal maneja el estado global del juego y coordina la lógica del juego. Contiene métodos para manejar el nombre del jugador, las opciones seleccionadas, determinar el ganador y reiniciar el juego.
 
-## Learn More
+2. **GameArea.js**: Este componente muestra la interfaz de usuario relacionada con el juego. Permite al jugador ingresar su nombre, bloquear el nombre, y seleccionar una opción de juego (piedra, papel o tijeras). También contiene lógica para habilitar y deshabilitar botones según el estado del juego.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Results.js**: Este componente muestra los resultados del juego, incluyendo el mensaje de victoria o derrota, las puntuaciones y la opción de reiniciar el juego.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Funciones Principales
 
-### Code Splitting
+- **handleNameChange**: Maneja el cambio en el nombre del jugador y actualiza el estado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **handleOptionClick**: Maneja el clic en las opciones de juego (piedra, papel o tijeras) y determina el ganador de la ronda.
 
-### Analyzing the Bundle Size
+- **generateComputerChoice**: Genera una elección aleatoria para la computadora.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **determineWinner**: Determina al ganador de la ronda según las reglas del juego.
 
-### Making a Progressive Web App
+- **resetGame**: Reinicia el juego, restableciendo las puntuaciones y las rondas jugadas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **lockName**: Bloquea el nombre del jugador una vez que se ha ingresado.
 
-### Advanced Configuration
+## Manejo de Errores
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Se muestra una alerta si el jugador intenta jugar sin ingresar su nombre.
 
-### Deployment
+## Soluciones Implementadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Uso de componentes reutilizables para una estructura organizada y mantenible.
 
-### `npm run build` fails to minify
+- Aplicación de estilos CSS con `styled-components` para una apariencia agradable y coherente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implementación de la lógica del juego siguiendo las reglas tradicionales de "Piedra, Papel o Tijeras".
+
+## Instrucciones para la Ejecución Local
+
+Si deseas ejecutar esta aplicación en tu entorno local, sigue estos pasos:
+
+1. Clona este repositorio en tu computadora:
+
+   ```bash
+   git clone https://jdrking.github.io/practico3/
+
+Navega al directorio del proyecto:
+
+cd piedra-papel-tijeras-react
+
+Instala las dependencias
+
+npm install
+
+Inicia la aplicación:
+
+npm start
+
+La aplicación se ejecutará en tu navegador en http://localhost:3000.
